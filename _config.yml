@@ -1,5 +1,4 @@
 name: IntroToRx
 markdown: redcarpet
 pygments: true
-source: new-site
 exclude: [ README.md ]
