@@ -2,3 +2,4 @@ name: IntroToRx
 markdown: redcarpet
 pygments: true
 exclude: [ README.md ]
+baseurl: /IntroToRx 
