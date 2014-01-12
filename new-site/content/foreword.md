@@ -15,7 +15,6 @@ As Rx is just a library, the team at Microsoft delivering Rx was able to isolate
 
 While Rx is *just a library*, it is a significant and bold move forward for the team at Microsoft and for any consumers of the library. Rx <i>will</i> change the way you design and build software for the following reasons:
 
-
  - The way that it tackles the Observer pattern is a divorce from .NET events toward a Java-style interface pattern but far more refined.
  - The way it tackles concurrency is quite a shift how many .NET developers would have done it before.
  - The abundance of (extension) methods in the library.
