@@ -1,6 +1,7 @@
 ---
-layout: page
+layout: default
 title: Foreword
+permalink: foreword.html
 ---
 
 # Preface
@@ -94,7 +95,7 @@ Forms/Silverlight) was a constant challenge, but Rx solved that too. Today if
 you ask a question on the Rx Forums, you will most likely be answered by someone
 from that team (or Dave Sexton).
 
-<a name="Acknowledgements">/a>
+<a name="Acknowledgements"></a>
 
 # Acknowledgements
 

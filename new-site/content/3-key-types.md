@@ -1,6 +1,7 @@
 ---
-layout: page
+layout: default
 title: Key Types
+permalink: key-types.html
 ---
 
 <a name="KeyTypes"></a>

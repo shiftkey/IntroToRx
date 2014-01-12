@@ -1,6 +1,7 @@
 ---
-layout: page
-title: Why
+layout: default
+title: Why?
+permalink: why.html
 ---
 
 # Why Rx?
