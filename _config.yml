@@ -1,5 +1,5 @@
-name: Your New Jekyll Site
+name: IntroToRx
 markdown: redcarpet
 pygments: true
 source: new-site
-exclude: [ README.md]
+exclude: [ README.md ]

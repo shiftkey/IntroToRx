@@ -1,44 +1,214 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Introduction to Rx</title>
+    <link href="css/Site.css" rel="stylesheet" type="text/css" />
+    <!--Google analytics-->
+    <script type="text/javascript">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-32704657-1']);
+        _gaq.push(['_trackPageview']);
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
 
-    </head>
-    <body>
-
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
-          </div>
-
-          {{ content }}
-
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Your Name<br />
-                What You Are<br />
-                you@example.com
-              </p>
+    </script>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div style="margin: 70px 20px 5px; float: right; text-align: right">
+                <a href="http://twitter.com/#!/search/%23RxNET">#RxNET</a><br />
+                <span style="color: #707070; font-weight: 700; font-size: 11px;">Version v1.0.1062.0</span><br />
+                <a href="#"><span style="font-weight: 700; font-size: 11px;">Switch to version v2.0.1234.0</span></a>
             </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/yourusername">github.com/yourusername</a><br />
-                <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
-              </p>
-            </div>
-          </div>
+            <img id="Logo" src="/css/titleText.png" style="height: 80px; margin: 20px; float: left" />
+            <table class="toc" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <th class="tocactive">Preface
+                    </th>
+                    <th class="toc">
+                        <a class="toc" href="Content/v1.0.10621.0/01_WhyRx.html">PART 1</a>
+                    </th>
+                    <th class="toc">
+                        <a class="toc" href="Content/v1.0.10621.0/04_CreatingObservableSequences.html">PART
+                            2</a>
+                    </th>
+                    <th class="toc">
+                        <a class="toc" href="Content/v1.0.10621.0/09_SideEffects.html">PART 3</a>
+                    </th>
+                    <th class="toc">
+                        <a class="toc" href="Content/v1.0.10621.0/15_SchedulingAndThreading.html">PART 4</a>
+                    </th>
+                    <th class="toc">
+                        <a class="toc" href="Content/v1.0.10621.0/18_UsageGuidelines.html">Appendix</a>
+                    </th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="toc">
+                        <a class="toc" href="Content/v1.0.10621.0/01_WhyRx.html">Getting started</a>
+                    </td>
+                    <td class="toc">
+                        <a class="toc" href="Content/v1.0.10621.0/04_CreatingObservableSequences.html">Sequence
+                            basics</a>
+                    </td>
+                    <td class="toc">
+                        <a class="toc" href="Content/v1.0.10621.0/09_SideEffects.html">Taming the sequence</a>
+                    </td>
+                    <td class="toc">
+                        <a class="toc" href="Content/v1.0.10621.0/15_SchedulingAndThreading.html">Concurrency</a>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
+        <div class="leftCol">
+            <ul class="partMenu">
+                <li>
+                    <div class="partMenuHeader">
+                        <a href="Content/v1.0.10621.0/00_Foreword.html">Preface</a>
+                    </div>
+                    <ul>
+                        <li><a href="Content/v1.0.10621.0/00_Foreword.html#Acknowledgements">Acknowledgements</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="partMenu">
+                <li>
+                    <div class="partMenuHeader">
+                        <a href="Content/v1.0.10621.0/01_WhyRx.html">PART 1 - Getting
+                        started</a>
+                    </div>
+                    <ul>
+                        <li><a href="Content/v1.0.10621.0/01_WhyRx.html#WhyRx">Why Rx?</a> </li>
+                        <li><a href="Content/v1.0.10621.0/02_KeyTypes.html#KeyTypes">Key types</a> </li>
+                        <li><a href="Content/v1.0.10621.0/03_LifetimeManagement.html#LifetimeManagement">Lifetime
+                            management</a> </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="partMenu">
+                <li>
+                    <div class="partMenuHeader">
+                        <a href="Content/v1.0.10621.0/04_CreatingObservableSequences.html">PART 2 - Sequence basics</a>
+                    </div>
+                    <ul>
+                        <li><a href="Content/v1.0.10621.0/04_CreatingObservableSequences.html#CreationOfObservables">Creating a sequence</a> </li>
+                        <li><a href="Content/v1.0.10621.0/05_Filtering.html#Reduction">Reducing a sequence</a>
+                        </li>
+                        <li><a href="Content/v1.0.10621.0/06_Inspection.html#Inspection">Inspection</a>
+                        </li>
+                        <li><a href="Content/v1.0.10621.0/07_Aggregation.html#Aggregation">Aggregation</a>
+                        </li>
+                        <li><a href="Content/v1.0.10621.0/08_Transformation.html#TransformationOfSequences">Transformation of sequences</a> </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="partMenu">
+                <li>
+                    <div class="partMenuHeader">
+                        <a href="Content/v1.0.10621.0/09_SideEffects.html">PART
+                        3 - Taming the sequence</a>
+                    </div>
+                    <ul>
+                        <li><a href="Content/v1.0.10621.0/09_SideEffects.html#SideEffects">Side-effects</a>
+                        </li>
+                        <li><a href="Content/v1.0.10621.0/10_LeavingTheMonad.html#LeavingTheMonad">Leaving the
+                            monad</a> </li>
+                        <li><a href="Content/v1.0.10621.0/11_AdvancedErrorHandling.html#AdvancedErrorHandling">Advanced error handling</a> </li>
+                        <li><a href="Content/v1.0.10621.0/12_CombiningSequences.html#CombiningMultipleSequences">Combining sequences</a> </li>
+                        <li><a href="Content/v1.0.10621.0/13_TimeShiftedSequences.html#TimeShiftedSequences">Time-shifted sequences</a> </li>
+                        <li><a href="Content/v1.0.10621.0/14_HotAndColdObservables.html#HotAndCold">Hot and
+                            Cold observables</a> </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="partMenu">
+                <li>
+                    <div class="partMenuHeader">
+                        <a href="Content/v1.0.10621.0/15_SchedulingAndThreading.html">PART 4 - Concurrency</a>
+                    </div>
+                    <ul>
+                        <li><a href="Content/v1.0.10621.0/15_SchedulingAndThreading.html#SchedulingAndThreading">Scheduling and threading</a> </li>
+                        <li><a href="Content/v1.0.10621.0/16_TestingRx.html#TestingRx">Testing Rx</a> </li>
+                        <li><a href="Content/v1.0.10621.0/17_SequencesOfCoincidence.html#SequencesOfCoincidence">Sequences of coincidence</a> </li>
+                        <li><a href="Content/v1.0.10621.0/17_SequencesOfCoincidence.html#Summary">Summary</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="partMenu">
+                <li>
+                    <div class="partMenuHeader">
+                        <a href="Content/v1.0.10621.0/18_UsageGuidelines.html">Appendix</a>
+                    </div>
+                    <ul>
+                        <li><a href="Content/v1.0.10621.0/18_UsageGuidelines.html#UsageGuidelines">Usage guidelines</a>
+                        </li>
+                        <li><a href="Content/v1.0.10621.0/19_DispellingMyths.html#DispellingMyths">Dispelling
+                            myths</a> </li>
+                        <li><a href="Content/v1.0.10621.0/20_Disposables.html#Disposables">Disposables</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div style="float: right; margin: 10px 0px 10px 10px; width: 140px; font-size: 11px; text-align: center">
+                <img src="/css/IntroToRx_Cover.png" style="margin: 10px" />
+                Lee Campbell<br />
+                <a href="Content/v1.0.10621.0/IntroToRx.mobi" title="Introduction to Rx as .mobi file (for Kindle)">Introduction to Rx<br />
+                    Kindle edition</a> (2012)
+            </div>
 
-    </body>
+            {{ content }}
+
+            <hr />
+            <div class="webonly">
+                <h1 class="ignoreToc">Additional recommended reading</h1>
+                <div align="center">
+                    <div style="display: inline-block; vertical-align: top; margin: 10px; width: 140px; font-size: 11px; text-align: center">
+                        <!--C# in a nutshell Amazon.co.uk-->
+                        <iframe src="http://rcm-uk.amazon.co.uk/e/cm?t=int0b-21&amp;o=2&amp;p=8&amp;l=as1&amp;asins=B008E6I1K8&amp;ref=qf_sp_asin_til&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr"
+                            style="width: 120px; height: 240px; margin: 10px"
+                            scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+                    </div>
+                    <div style="display: inline-block; vertical-align: top; margin: 10px; width: 140px; font-size: 11px; text-align: center">
+                        <!--C# Linq pocket reference Amazon.co.uk-->
+                        <iframe src="http://rcm-uk.amazon.co.uk/e/cm?t=int0b-21&amp;o=2&amp;p=8&amp;l=as1&amp;asins=0596519249&amp;ref=qf_sp_asin_til&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr"
+                            style="width: 120px; height: 240px; margin: 10px"
+                            scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+                    </div>
+
+                    <div style="display: inline-block; vertical-align: top; margin: 10px; width: 140px; font-size: 11px; text-align: center">
+                        <!--CLR via C# v4 Amazon.co.uk-->
+                        <iframe src="http://rcm-uk.amazon.co.uk/e/cm?t=int0b-21&amp;o=2&amp;p=8&amp;l=as1&amp;asins=B00AA36R4U&amp;ref=qf_sp_asin_til&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr"
+                            style="width: 120px; height: 240px; margin: 10px"
+                            scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+                    </div>
+                    <div style="display: inline-block; vertical-align: top; margin: 10px; width: 140px; font-size: 11px; text-align: center">
+                        <!--Real-world functional programming Amazon.co.uk-->
+                        <iframe src="http://rcm-uk.amazon.co.uk/e/cm?t=int0b-21&amp;o=2&amp;p=8&amp;l=as1&amp;asins=1933988924&amp;ref=qf_sp_asin_til&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr"
+                            style="width: 120px; height: 240px; margin: 10px"
+                            scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">
+            Original series @ <a href="http://leecampbell.blogspot.com/2010/08/reactive-extensions-for-net.html">Lee Campbell</a>
+        </div>
+    </div>
+</body>
 </html>
+
+
+
