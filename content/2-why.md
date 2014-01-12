@@ -11,43 +11,29 @@ Users expect real time data. They want their tweets now. Their order confirmed n
 Welcome to [Reactive Extensions for .NET](http://msdn.microsoft.com/en-us/devlabs/gg577609) (Rx). This book is aimed at any .NET developer curious about the *IObservable&lt;T&gt;* and *IObserver&lt;T&gt;* interfaces that have popped up in .NET 4. The Reactive Extensions libraries from Microsoft are the implementations of these interfaces that are quickly picking up traction with Server, Client and Web developers alike. Rx is a powerfully productive development tool. Rx enables developers to solve problems in an elegant, familiar and declarative style; often crucially with less code than was possible without Rx. By leveraging LINQ, Rx gets to boast the standard benefits of a LINQ implementation**[1](#reference1")**.
 
 <!-- who even uses dt and dt tags in this day and age??? -->
-<dl>
-        <dt>Integrated</dt>
-        <dd>
-            LINQ is integrated into the C# language.
-        </dd>
-        <dt>Unitive</dt>
-        <dd>
-            Using LINQ allows you to leverage your existing skills for querying data at rest
-            (LINQ to SQL, LINQ to XML or LINQ to objects) to query data in motion. You could
-            think of Rx as LINQ to events. LINQ allows you to transition from other paradigms
-            into a common paradigm. For example you can transition a standard .NET event, an
-            asynchronous method call, a *Task* or perhaps a 3rd party middleware API
-            into a single common Rx paradigm. By leveraging our existing language of choice
-            and using familiar operators like *Select*, *Where*, *GroupBy*
-            etc, developers can rationalize and communicate designs or code in a common form.
-        </dd>
-        <dt>Extensible</dt>
-        <dd>
-            You can extend Rx with your own custom query operators (extension methods).
-        </dd>
-        <dt>Declarative</dt>
-        <dd>
-            LINQ allows your code to read as a declaration of <i>what</i> your code does and
-            leaves the <i>how</i> to the implementation of the operators.</dd>
-        <dt>Composable</dt>
-        <dd>
-            LINQ features, such as extension methods, lambda syntax and query comprehension
-            syntax, provide a fluent API for developers to consume. Queries can be constructed
-            with numerous operators. Queries can then be composed together to further produce
-            composite queries.</dd>
-        <dt>Transformative</dt>
-        <dd>
-            Queries can transform their data from one type to another. A query might translate
-            a single value to another value, aggregated from a sequence of values to a single
-            average value or expand a single data value into a sequence of values.
-        </dd>
-    </dl>
+### Integrated
+
+LINQ is integrated into the C# language.
+
+### Unitive
+
+Using LINQ allows you to leverage your existing skills for querying data at rest (LINQ to SQL, LINQ to XML or LINQ to objects) to query data in motion. You could think of Rx as LINQ to events. LINQ allows you to transition from other paradigms into a common paradigm. For example you can transition a standard .NET event, an asynchronous method call, a *Task* or perhaps a 3rd party middleware API into a single common Rx paradigm. By leveraging our existing language of choice and using familiar operators like *Select*, *Where*, *GroupBy* etc, developers can rationalize and communicate designs or code in a common form.
+
+### Extensible
+
+You can extend Rx with your own custom query operators (extension methods).
+
+### Declarative
+
+LINQ allows your code to read as a declaration of <i>what</i> your code does and leaves the <i>how</i> to the implementation of the operators.
+
+### Composable
+
+LINQ features, such as extension methods, lambda syntax and query comprehension syntax, provide a fluent API for developers to consume. Queries can be constructed with numerous operators. Queries can then be composed together to further produce composite queries.
+
+### Transformative
+
+Queries can transform their data from one type to another. A query might translate a single value to another value, aggregated from a sequence of values to a single average value or expand a single data value into a sequence of values.
 
 <a name="WhenRx"></a>
 
@@ -64,11 +50,11 @@ Managing events like these is what Rx was built for:
 - UI events like mouse move, button click
 - Domain events like property changed, collection updated, "Order Filled", "Registration accepted" etc.
 - Infrastructure events like from file watcher, system and WMI events
-- Integration events like a broadcast from a message bus or a push event from WebSockets API or other low latency middleware like <a href="http://www.my-channels.com">Nirvana</a>
-- Integration with a CEP engine like <a href="http://www.microsoft.com/sqlserver/en/us/solutions-technologies/business-intelligence/complex-event-processing.aspx">StreamInsight</a> or <a href="http://www.streambase.com">StreamBase</a>.</li>
+- Integration events like a broadcast from a message bus or a push event from WebSockets API or other low latency middleware like [Nirvana](http://www.my-channels.com)
+- Integration with a CEP engine like [StreamInsight](http://www.microsoft.com/sqlserver/en/us/solutions-technologies/business-intelligence/complex-event-processing.aspx) or [StreamBase](http://www.streambase.com).
    
 
-Interestingly Microsoft's CEP product <a href="http://www.microsoft.com/sqlserver/en/us/solutions-technologies/business-intelligence/complex-event-processing.aspx">StreamInsight</a>, which is part of the SQL Server family, also uses LINQ to build queries over streaming events of data.
+Interestingly Microsoft's CEP product [StreamInsight](http://www.microsoft.com/sqlserver/en/us/solutions-technologies/business-intelligence/complex-event-processing.aspx), which is part of the SQL Server family, also uses LINQ to build queries over streaming events of data.
 
 
 Rx is also very well suited for introducing and managing concurrency for the purpose of *offloading*. That is, performing a given set of work concurrently to free up the current thread. A very popular use of this is maintaining a responsive UI.
@@ -87,18 +73,18 @@ Rx can also be used for asynchronous calls. These are effectively sequences of o
 
 You may find the using TPL, Dataflow or `async` keyword (.NET 4.5) proves to be a more natural way of composing asynchronous methods. While Rx can definitely help with these scenarios, if there are other more appropriate frameworks at your disposal you should consider them first.
 
-Rx can be used, but is less suited for, introducing and managing concurrency for the purposes of <i>scaling</i> or performing <i>parallel</i> computations. Other dedicated frameworks like TPL (Task Parallel Library) or C++ AMP are more appropriate for performing parallel compute intensive work.
+Rx can be used, but is less suited for, introducing and managing concurrency for the purposes of <i>scaling</i> or performing *parallel* computations. Other dedicated frameworks like TPL (Task Parallel Library) or C++ AMP are more appropriate for performing parallel compute intensive work.
     
-See more on TPL, Dataflow, <code>async</code> and C++ AMP at <a href="http://msdn.microsoft.com/en-us/concurrency"> Microsoft's Concurrency homepage</a>.
+See more on TPL, Dataflow, `async` and C++ AMP at [Microsoft's Concurrency homepage](http://msdn.microsoft.com/en-us/concurrency)
 
 <a name="Wont"></a>
 
 ### Won't use Rx
  
-Rx and specifically <em>IObservable&lt;T&gt;</em> is not a replacement for <em>IEnumerable&lt;T&gt;</em>. I would not recommend trying to take something that is naturally pull based and force it to be push based.
+Rx and specifically **IObservable&lt;T&gt;** is not a replacement for **IEnumerable&lt;T&gt;**. I would not recommend trying to take something that is naturally pull based and force it to be push based.
  
-- Translating existing <em>IEnumerable&lt;T&gt;</em> values to <em>IObservable&lt;T&gt;</em> just so that the code base can be "more Rx"
-- Message queues. Queues like in MSMQ or a JMS implementation generally have transactionality and are by definition sequential. I feel <em>IEnumerable&lt;T&gt;</em> is a natural fit for here.
+- Translating existing **IEnumerable&lt;T&gt;** values to **IObservable&lt;T&gt;** just so that the code base can be "more Rx"
+- Message queues. Queues like in MSMQ or a JMS implementation generally have transactionality and are by definition sequential. I feel **IEnumerable&lt;T&gt;** is a natural fit for here.
     
 By choosing the best tool for the job your code should be easier to maintain, provide better performance and you will probably get better support.
 
@@ -109,49 +95,49 @@ By choosing the best tool for the job your code should be easier to maintain, pr
 Adopting and learning Rx can be an iterative approach where you can slowly apply it to your infrastructure and domain. In a short time you should be able to have the skills to produce code, or reduce existing code, to queries composed of simple operators. For example this simple ViewModel is all I needed to code to integrate a search that is to be executed as a user types.
 
 ```csharp
-    public class MemberSearchViewModel : INotifyPropertyChanged
+public class MemberSearchViewModel : INotifyPropertyChanged
+{
+    // fields removed...
+    public MemberSearchViewModel(IMemberSearchModel memberSearchModel,
+        ISchedulerProvider schedulerProvider)
     {
-        // fields removed...
-        public MemberSearchViewModel(IMemberSearchModel memberSearchModel,
-            ISchedulerProvider schedulerProvider)
-        {
-            _memberSearchModel = memberSearchModel;
+        _memberSearchModel = memberSearchModel;
                 
-            // run search when SearchText property changes
-            this.PropertyChanges(vm =&gt; vm.SearchText)
-                    .Subscribe(Search);
-        }
-            
-        // assume INotifyPropertyChanged implementations of properties...
-        public string SearchText { get; set; }
-        public bool IsSearching { get; set; }
-        public string Error { get; set; }
-        public ObservableCollection&lt;string&gt; Results { get; }
-
-        // search on background thread and return result on dispatcher.
-        private void Search(string searchText)
-        {
-            using (_currentSearch) { }
-                IsSearching = true;
-                Results.Clear();
-                Error = null;
-
-                _currentSearch = _memberSearchModel.SearchMembers(searchText)
-                    .Timeout(TimeSpan.FromSeconds(2))
-                    .SubscribeOn(_schedulerProvider.TaskPool)
-                    .ObserveOn(_schedulerProvider.Dispatcher)
-                    .Subscribe(
-                        Results.Add,
-                        ex =>;
-                        {
-                            IsSearching = false;
-                            Error = ex.Message;
-                        },
-                        () => { IsSearching = false; });
-        }
-
-        ...
+        // run search when SearchText property changes
+        this.PropertyChanges(vm =&gt; vm.SearchText)
+            .Subscribe(Search);
     }
+            
+    // assume INotifyPropertyChanged implementations of properties...
+    public string SearchText { get; set; }
+    public bool IsSearching { get; set; }
+    public string Error { get; set; }
+    public ObservableCollection&lt;string&gt; Results { get; }
+
+    // search on background thread and return result on dispatcher.
+    private void Search(string searchText)
+    {
+        using (_currentSearch) { }
+            IsSearching = true;
+            Results.Clear();
+            Error = null;
+ 
+            _currentSearch = _memberSearchModel.SearchMembers(searchText)
+                .Timeout(TimeSpan.FromSeconds(2))
+                .SubscribeOn(_schedulerProvider.TaskPool)
+                .ObserveOn(_schedulerProvider.Dispatcher)
+                .Subscribe(
+                    Results.Add,
+                    ex =>;
+                    {
+                        IsSearching = false;
+                        Error = ex.Message;
+                    },
+                    () => { IsSearching = false; });
+    }
+
+    ...
+}
 ```
 
 While this code snippet is fairly small it supports the following requirements:
@@ -175,6 +161,6 @@ Push is here. Arming yourself with Rx is a powerful way to meet users' expectati
 
 <p class="comment">
     <a name="reference1"></a><sup>1</sup>
-    <a href="http://www.amazon.co.uk/gp/product/B001XT616O/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=1634&amp;creative=6738&amp;creativeASIN=B001XT616O&amp;linkCode=as2&amp;tag=int0b-21">Essential LINQ</a><img src="http://www.assoc-amazon.co.uk/e/ir?t=int0b-21&amp;l=as2&amp;o=2&amp;a=B001XT616O" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" class="webonly" />
+    []()<img src="http://www.assoc-amazon.co.uk/e/ir?t=int0b-21&amp;l=as2&amp;o=2&amp;a=B001XT616O" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" class="webonly" />
      - Calvert, Kulkarni
 </p>
