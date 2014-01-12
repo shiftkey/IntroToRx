@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Foreword
+title: Why
 ---
 
 # Why Rx?
