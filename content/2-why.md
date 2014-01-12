@@ -8,7 +8,7 @@ permalink: why.html
 
 Users expect real time data. They want their tweets now. Their order confirmed now. They need prices accurate as of now. Their online games need to be responsive. As a developer, you demand fire-and-forget messaging. You don't want to be blocked waiting for a result. You want to have the result pushed to you when it is ready. Even better, when working with result sets, you want to receive individual results as they are ready. You do not want to wait for the entire set to be processed before you see the first row. The world has moved to push; users are waiting for us to catch up. Developers have tools to push data, this is easy. Developers need tools to react to push data.
 
-Welcome to [Reactive Extensions for .NET](http://msdn.microsoft.com/en-us/devlabs/gg577609) (Rx). This book is aimed at any .NET developer curious about the *IObservable&lt;T&gt;* and *IObserver&lt;T&gt;* interfaces that have popped up in .NET 4. The Reactive Extensions libraries from Microsoft are the implementations of these interfaces that are quickly picking up traction with Server, Client and Web developers alike. Rx is a powerfully productive development tool. Rx enables developers to solve problems in an elegant, familiar and declarative style; often crucially with less code than was possible without Rx. By leveraging LINQ, Rx gets to boast the standard benefits of a LINQ implementation**[1](#reference1")**.
+Welcome to [Reactive Extensions for .NET](http://msdn.microsoft.com/en-us/devlabs/gg577609) (Rx). This book is aimed at any .NET developer curious about the *IObservable&lt;T&gt;* and *IObserver&lt;T&gt;* interfaces that have popped up in .NET 4. The Reactive Extensions libraries from Microsoft are the implementations of these interfaces that are quickly picking up traction with Server, Client and Web developers alike. Rx is a powerfully productive development tool. Rx enables developers to solve problems in an elegant, familiar and declarative style; often crucially with less code than was possible without Rx. By leveraging LINQ, Rx gets to boast the standard benefits of a LINQ implementation**[1](#reference1)**.
 
 <!-- who even uses dt and dt tags in this day and age??? -->
 ### Integrated
@@ -160,7 +160,6 @@ To produce this sample is almost a case of composing the operators that match th
 Push is here. Arming yourself with Rx is a powerful way to meet users' expectations of a push world. By understanding and composing the constituent parts of Rx you will be able to make short work of complexities of processing incoming events. Rx is set to become a day-to-day part of your coding experience.
 
 <p class="comment">
-    <a name="reference1"></a><sup>1</sup>
-    []()<img src="http://www.assoc-amazon.co.uk/e/ir?t=int0b-21&amp;l=as2&amp;o=2&amp;a=B001XT616O" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" class="webonly" />
-     - Calvert, Kulkarni
+    <a name="reference1"></a><sup>1</sup>   
+<a href="http://www.assoc-amazon.co.uk/e/ir?t=int0b-21&amp;l=as2&amp;o=2&amp;a=B001XT616O">Essential LINQ</a> - Calvert, Kulkarni
 </p>
